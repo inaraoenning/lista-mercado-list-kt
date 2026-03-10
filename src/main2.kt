@@ -32,7 +32,7 @@ fun main() {
 
                 if (item.contains(nomeItem)) {
                     println("Item já existe na lista!")
-                   break
+                    continue // faz o laço pular para a próxima repetição sem quebrá-lo por completo
                 }
 
                 item.add(nomeItem)
@@ -52,7 +52,7 @@ fun main() {
                     item.removeAt(indexItem)
                     valor.removeAt(indexItem)
                     println("$nomeItem removido com sucesso!")
-                    return
+                    continue // faz o laço pular para a próxima repetição sem quebrá-lo por completo
                 }
             }
 
@@ -66,9 +66,10 @@ fun main() {
 
                 if (item.contains(nomeItem)) {
                     val indexItem = item.indexOf(nomeItem)
-                    item.removeAt(indexItem)
-                    valor.removeAt(indexItem)
-                    println("$nomeItem Removido")
+                    valor.
+                    println("Valor de $nomeItem alterado para $valorItem")
+                    continue // faz o laço pular para a próxima repetição sem quebrá-lo por completo
+
                 }
 
             }
