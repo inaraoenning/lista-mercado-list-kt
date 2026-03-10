@@ -1,4 +1,4 @@
-fun main2() {
+fun main() {
 
     // Lista de compras com List
 
@@ -32,7 +32,7 @@ fun main2() {
 
                 if (item.contains(nomeItem)) {
                     println("Item já existe na lista!")
-                    return
+                   break
                 }
 
                 item.add(nomeItem)
@@ -58,10 +58,27 @@ fun main2() {
 
             3 -> {
                 // todo alterar preco do item acessando o index
+                println("Digite o nome do item que deseja alterar o valor:")
+                val nomeItem = readln()
+
+                println("Digite o novo valor do item:")
+                val valorItem: Double = readln().toDouble()
+
+                if (item.contains(nomeItem)) {
+                    val indexItem = item.indexOf(nomeItem)
+                    item.removeAt(indexItem)
+                    valor.removeAt(indexItem)
+                    println("$nomeItem Removido")
+                }
+
             }
 
             4 -> {
                 // todo lista itens e valores usando for
+                println(" === Lista dos Itens === ")
+                for (i in 0 until item.size) {
+                    println("${item[i]} Valor ${valor[i]}")
+                }
             }
 
             5 -> {
@@ -69,14 +86,6 @@ fun main2() {
             }
         }
     }
-
-    // when para opções do menu
-
-    // opção 1: adicionar item e valor
-    // opcao 2: remover item e valor
-    // opção 3: alterar preço do item
-    // opção 4: listar itens e valores
-
 
 }
 
