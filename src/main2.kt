@@ -66,12 +66,11 @@ fun main() {
 
                 if (item.contains(nomeItem)) {
                     val indexItem = item.indexOf(nomeItem)
-                    valor.
+                    valor.set(indexItem, valorItem)
+
                     println("Valor de $nomeItem alterado para $valorItem")
                     continue // faz o laço pular para a próxima repetição sem quebrá-lo por completo
-
                 }
-
             }
 
             4 -> {
