@@ -1,7 +1,7 @@
 fun main() {
 
     // Mapa onde a chave é um textp e o valor é um numero
-    val itensLista = mutableMapOf<String, Double>()
+    val mapaLista = mutableMapOf<String, Double>()
 
     while (true) {
         println(
@@ -23,12 +23,12 @@ fun main() {
                 println("Informe o valor:")
                 val valorItem: Double = readln().toDouble()
 
-                if (itensLista.contains(nomeItem)) {
+                if (mapaLista.contains(nomeItem)) {
                     println("Item já adicionado a lista")
                     continue
                 }
                 // Guarda o preço dentro da key nomeItem
-                itensLista[nomeItem] = valorItem
+                mapaLista[nomeItem] = valorItem
 
             }
 
@@ -37,8 +37,8 @@ fun main() {
                 println("Digite o nome do item para remover:")
                 val nomeItem = readln()
 
-                if (itensLista.contains(nomeItem)) {
-                    itensLista.remove(nomeItem)
+                if (mapaLista.contains(nomeItem)) {
+                    mapaLista.remove(nomeItem)
                     println("$nomeItem removido com sucesso.")
                     continue
                 }
@@ -50,11 +50,11 @@ fun main() {
                 println("Infome o item que deseja alterar o valor")
                 val nomeItem = readln()
 
-                if (itensLista.contains(nomeItem)) {
+                if (mapaLista.contains(nomeItem)) {
                     println("Informe o novo valor do Item:")
                     val valorItem: Double = readln().toDouble()
                     // Adiciona o novo valor na key
-                    itensLista[nomeItem] = valorItem
+                    mapaLista[nomeItem] = valorItem
                     continue
                 }
                 println("Item não econtrado.")
@@ -62,11 +62,11 @@ fun main() {
 
             4 -> {
                 // para cada nome e valor da minha lista printar nome e valor
-                if (itensLista.isEmpty()) {
+                if (mapaLista.isEmpty()) {
                     println("Lista vazia. Adicione algum item para visualizar a lista")
                     continue
                 }
-                itensLista.forEach { (nome, valor) ->
+                mapaLista.forEach { (nome, valor) ->
                     println("$nome - $valor")
                 }
             }
