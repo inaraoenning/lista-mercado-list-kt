@@ -45,7 +45,7 @@ fun main() {
                 nomeItem.add(nome)
                 valorItem.add(valor)
 
-                println("$nome foi adicionar a lista.")
+                println("$nome foi adicionado a lista com valor $valor.")
 
             }
             2-> {
@@ -53,14 +53,30 @@ fun main() {
                 val nome: String = readln()
 
                 // Verifica se o item existe na lista para remover
-                if(!nomeItem.contains(nome)){
+                if (!nomeItem.contains(nome)) {
                     print("Item não encontrado.")
                     continue
                 }
 
-                // val busca = nomeItem.find { it.contains(nome) }
+                // variavel index para guardar o index nome na lista nomeItem
+                val index = nomeItem.indexOf(nome)
 
-                //nomeItem.removeAt(nome)
+                nomeItem.removeAt(index)
+                valorItem.removeAt(index)
+
+                println("$nome removido da lista")
+            }
+
+            3 -> {
+
+            }
+
+            4 -> {
+                println("=== Lista ===")
+
+                for (i in 0 until nomeItem.size) {
+                    println("${nomeItem[i]} - ${valorItem[i]}")
+                }
             }
         }
     }
