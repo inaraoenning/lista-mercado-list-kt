@@ -9,9 +9,9 @@ fun main() {
             1- Adicionar Item
             2- Remover Item
             3- Alterar Valor
-            4- Ver Itens
+            4- Ver Lista
             5- Sair
-        """.trimIndent()
+        """.trimIndent() // Remove espaçamento antes da linha
         )
         val opcao: Int = readln().toInt()
 

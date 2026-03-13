@@ -20,10 +20,10 @@ fun main() {
         println("=== Lista de Compras ===")
         print(
             """
-            1- Adicionar
-            2- Remover
-            3- Alterar valor
-            4- Ver lista
+            1- Adicionar Item
+            2- Remover Item
+            3- Alterar Valor
+            4- Ver Lista
             5- Sair
         """.trimIndent()
         )
@@ -31,7 +31,7 @@ fun main() {
 
         when (opcao) {
             1 -> {
-                println("Informe o nome do produto:")
+                println("Informe o nome do Item:")
                 val nome: String = readln()
 
                 // Verifica se o item já existe antes de passar o valor
@@ -39,13 +39,13 @@ fun main() {
                     println("🟡 Item já existe na lista.")
                     continue
                 }
-                print("Informe o valor do produto:")
+                print("Informe o valor do Item:")
                 val valor: Double = readln().toDouble()
 
                 nomeItem.add(nome)
                 valorItem.add(valor)
 
-                println("$nome foi adicionado a lista com valor $valor.")
+                println("🟢 $nome foi adicionado a lista com valor $valor.")
 
             }
 
@@ -63,22 +63,22 @@ fun main() {
                 val index = nomeItem.indexOf(nome)
 
                 nomeItem.removeAt(index)
-                valorItem.removeAt(index)
+                valorItem.removeAt(index) // dúvida
 
-                println("$nome removido da lista")
+                println("🟢 $nome removido da lista.")
             }
 
             3 -> {
 
                 //alterar valor
-                println("Informe o nome do produto para alterar o valor:")
+                println("Informe o nome do Item para alterar o valor:")
                 val nome: String = readln()
 
                 if (!nomeItem.contains(nome)) {
                     println("🟡 Item não encontrado.")
                 }
 
-                print("Informe o valor do produto:")
+                print("Informe o valor do Item:")
                 val valor: Double = readln().toDouble()
 
                 val index = nomeItem.indexOf(nome)
@@ -86,11 +86,17 @@ fun main() {
             }
 
             4 -> {
-                println("=== Lista ===")
+
+                // Ver lista
+                println("====================")
 
                 for (i in 0 until nomeItem.size) {
                     println("${nomeItem[i]} - ${valorItem[i]}")
                 }
+                println("Total: ${valorItem.sum()}")
+
+                println("====================")
+
             }
         }
     }
