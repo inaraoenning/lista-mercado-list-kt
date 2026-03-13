@@ -91,7 +91,7 @@ fun main() {
                 println("====================")
 
                 for (i in 0 until nomeItem.size) {
-                    println("${nomeItem[i]} - ${valorItem[i]}")
+                    println("${nomeItem[i].uppercase()} - ${valorItem[i]}")
                 }
                 println("Total: ${valorItem.sum()}")
 
