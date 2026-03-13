@@ -48,13 +48,14 @@ fun main() {
                 println("$nome foi adicionado a lista com valor $valor.")
 
             }
-            2-> {
+
+            2 -> {
                 println("Informe o nome do produto que deseja remover:")
                 val nome: String = readln()
 
                 // Verifica se o item existe na lista para remover
                 if (!nomeItem.contains(nome)) {
-                    print("Item não encontrado.")
+                    print("🟡 Item não encontrado.")
                     continue
                 }
 
@@ -69,6 +70,19 @@ fun main() {
 
             3 -> {
 
+                //alterar valor
+                println("Informe o nome do produto para alterar o valor:")
+                val nome: String = readln()
+
+                if (!nomeItem.contains(nome)) {
+                    println("🟡 Item não encontrado.")
+                }
+
+                print("Informe o valor do produto:")
+                val valor: Double = readln().toDouble()
+
+                val index = nomeItem.indexOf(nome)
+                valorItem.set(index, valor)
             }
 
             4 -> {
